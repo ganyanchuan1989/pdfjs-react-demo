@@ -13,7 +13,8 @@ app.use(express.static("public"));
 app.use(cors());
 
 app.get("/pdf/*", (req, res) => {
-  console.log("get request");
+  var pathname = url.parse(req.url).pathname;
+  console.log(`post request ${pathname}`);
   res.append("Content-Type", "application/json;charset=utf-8");
   res.send(JSON.stringify({ name: "ganxz" }));
   // fs.readFile("./static/2.pdf", function(err, data) {
@@ -25,8 +26,8 @@ app.get("/pdf/*", (req, res) => {
   // });
 });
 app.post("/pdf/*", (req, res) => {
-  console.log("post request");
   var pathname = url.parse(req.url).pathname;
+  console.log(`post request ${pathname}`);
   fs.readFile("./public/" + pathname, function(err, data) {
     if (err) {
       console.log(err);
