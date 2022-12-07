@@ -4,7 +4,7 @@
   "private": true,
   "dependencies": {
     "cors": "^2.8.5",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "pdfjs-dist": "^2.1.266",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
